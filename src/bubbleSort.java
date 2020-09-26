@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 //Bubble Sort program in Java
 public class bubbleSort {
@@ -17,18 +18,36 @@ public class bubbleSort {
 			}
 		}
 	}
-	public static void main(String args[]){
-		int array[] = new int[5];
-		
-		for (int i = 0; i < array.length; i++){
-			array[i] = (int)(Math.random()*100);
-		}
-		
-		System.out.println("UnSorted array: " + Arrays.toString(array));
 
+	public static void main(String args[]) {
+		/*
+		 * int array[] = new int[5];
+		 * for (int i = 0; i < array.length; i++){ array[i] =
+		 * (int)(Math.random()*100); }
+		 * System.out.println("UnSorted array: " + Arrays.toString(array));
+		 * bubbleSort object = new bubbleSort(); object.bubbleSort(array);
+		 * System.out.println("Sorted array: " + Arrays.toString(array));
+		 */
+
+		// Working on taking sorting taking user input
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Please Enter Array Size: ");
+		int arraySize = sc.nextInt();
+		int array[] = new int[arraySize];
+
+		for (int i = 0; i < arraySize; i++) {
+			System.out.print("Enter Values: ");
+			array[i] = sc.nextInt();
+		}
+
+		System.out.println("Unsorted array:   " + Arrays.toString(array));
+
+		// Create new object for bubbleSort
 		bubbleSort object = new bubbleSort();
 		object.bubbleSort(array);
-		System.out.println("Sorted array: " + Arrays.toString(array));
+		// array should now be sorted
+		System.out.println("BubbleSort array: " + Arrays.toString(array));
+
 	}
 
 }
